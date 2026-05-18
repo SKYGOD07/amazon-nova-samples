@@ -21,13 +21,13 @@ The plugins and powers share their underlying guidance: instructions, inference-
 
 ```
 /plugin marketplace add aws-samples/amazon-nova-samples
-/plugin install nova-prompting@amazon-nova-samples
+/plugin install nova-prompting@aws-samples-amazon-nova-samples
 ```
 
 To also install the migration assistant:
 
 ```
-/plugin install nova-migration@amazon-nova-samples
+/plugin install nova-migration@aws-samples-amazon-nova-samples
 ```
 
 After install, run `/reload-plugins` and the slash commands appear automatically.

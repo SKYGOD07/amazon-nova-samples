@@ -11,7 +11,7 @@ The two skills are strictly separated — `/nova1-prompt` never emits Nova 2 gui
 
 ```
 /plugin marketplace add aws-samples/amazon-nova-samples
-/plugin install nova-prompting@amazon-nova-samples
+/plugin install nova-prompting@aws-samples-amazon-nova-samples
 ```
 
 Once installed, the two slash commands are available in any Claude Code session.
@@ -19,7 +19,7 @@ Once installed, the two slash commands are available in any Claude Code session.
 To update later:
 
 ```
-/plugin marketplace update amazon-nova-samples
+/plugin marketplace update aws-samples-amazon-nova-samples
 ```
 
 To uninstall:

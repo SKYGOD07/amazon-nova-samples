@@ -64,7 +64,7 @@ usage() {
 
   Claude Code users can also install via the marketplace:
       /plugin marketplace add aws-samples/amazon-nova-samples
-      /plugin install nova-prompting@amazon-nova-samples
+      /plugin install nova-prompting@aws-samples-amazon-nova-samples
 
   This script is the easiest way to install the Kiro powers, since Kiro
   has no central plugin registry yet.
