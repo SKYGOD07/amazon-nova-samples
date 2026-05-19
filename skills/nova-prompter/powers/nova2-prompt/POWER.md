@@ -101,24 +101,24 @@ Apply the **text inference config** from the reference table in STEP 3.
 
 | Use Case | Temperature | Reasoning | Notes |
 |----------|------------|-----------|-------|
-| `multimodal_ocr` | default (0.7) | **DISABLED** | Explicitly set `type: disabled` — do not rely on default |
+| `multimodal_ocr` | default (0.7) | **DISABLED** | Reasoning is disabled by default — omit `reasoningConfig` |
 | `multimodal_kie` | 0 | OPTIONAL | Reasoning improves complex schemas or image-only input |
-| `multimodal_object_detection` | 0 | **DISABLED** | Explicitly set `type: disabled` — do not rely on default |
-| `multimodal_ui_detection` | 0 | **DISABLED** | Explicitly set `type: disabled` — do not rely on default |
+| `multimodal_object_detection` | 0 | **DISABLED** | Reasoning is disabled by default — omit `reasoningConfig` |
+| `multimodal_ui_detection` | 0 | **DISABLED** | Reasoning is disabled by default — omit `reasoningConfig` |
 | `multimodal_video_summary` | 0 | OPTIONAL | Some cases benefit from reasoning |
 | `multimodal_video_caption` | 0 | OPTIONAL | Some cases benefit from reasoning |
-| `multimodal_video_timestamps` | 0 | **DISABLED** | Explicitly set `type: disabled` — do not rely on default |
-| `multimodal_video_classification` | 0 | **DISABLED** | Explicitly set `type: disabled` — do not rely on default |
+| `multimodal_video_timestamps` | 0 | **DISABLED** | Reasoning is disabled by default — omit `reasoningConfig` |
+| `multimodal_video_classification` | 0 | **DISABLED** | Reasoning is disabled by default — omit `reasoningConfig` |
 | `multimodal_security_footage` | 0 | OPTIONAL | Some cases benefit from reasoning |
 
-> ⚠️ **DISABLED means explicitly disabled** — always set `additionalModelRequestFields = {"thinking": {"type": "disabled"}}`. Never omit the field and assume the default is safe.
+> ⚠️ **DISABLED means do not enable reasoning** — simply omit `reasoningConfig` from `additionalModelRequestFields`. Disabled is Nova 2 Lite's default. Do NOT set `{"thinking": {"type": "disabled"}}` — that is the Anthropic shape and Nova will reject the unknown field.
 
 #### Text / Agentic Inference Configs
 
 | Use Case | Temperature | Top P | Reasoning | Notes |
 |----------|------------|-------|-----------|-------|
-| `general` | default (0.7) | default | DISABLED | Explicitly set `type: disabled` |
-| `tool_calling` | 0.7 | 0.9 | DISABLED | Explicitly set `type: disabled` |
+| `general` | default (0.7) | default | DISABLED | Omit `reasoningConfig` (disabled by default) |
+| `tool_calling` | 0.7 | 0.9 | DISABLED | Omit `reasoningConfig` (disabled by default) |
 | `tool_calling_reasoning` | 1 | 0.9 | ENABLED | Use maxReasoningEffort low or medium; for high effort: unset temperature, topP, and maxTokens |
 | `complex_reasoning` | default (0.7) | default | ENABLED | Use maxReasoningEffort low or medium; for high effort: unset temperature, topP, and maxTokens |
 
@@ -593,16 +593,17 @@ inferenceConfig = {
     # "topP": 0.9,        # include only if the table gives an explicit value; omit otherwise
 }
 
-# Reasoning DISABLED (use this exact form — never omit and assume safe default):
-additionalModelRequestFields = {
-    "thinking": {"type": "disabled"}
-}
+# Reasoning DISABLED — disabled is Nova 2 Lite's default. Simply omit
+# `additionalModelRequestFields` (or omit the `reasoningConfig` key).
+# Do NOT pass {"thinking": {"type": "disabled"}} — that is the Anthropic shape
+# and Nova will reject the unknown field.
 
 # Reasoning ENABLED:
 additionalModelRequestFields = {
-    "thinking": {
+    "reasoningConfig": {
         "type": "enabled",
-        "budget_tokens": 1024  # low=1024, medium=4096; for high effort: omit budget_tokens AND omit temperature/topP/maxTokens from inferenceConfig
+        "maxReasoningEffort": "low"  # "low" | "medium" | "high"
+        # For "high": also omit temperature, topP, and maxTokens from inferenceConfig
     }
 }
 ```
