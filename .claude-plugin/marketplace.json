@@ -12,6 +12,11 @@
       "name": "nova-prompting",
       "source": "./skills/nova-prompter/plugins/nova-prompting",
       "description": "Prompt optimization skills for Amazon Nova 1 and Nova 2 Lite (/nova1-prompt, /nova2-prompt)."
+    },
+    {
+      "name": "titan-nova-mme-migration",
+      "source": "./skills/titan-nova-mme-migration",
+      "description": "Migrate Amazon Bedrock embedding code from Titan Text V2 / Titan Multimodal G1 to Amazon Nova Multimodal Embeddings."
     }
   ]
 }
