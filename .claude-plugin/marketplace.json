@@ -17,6 +17,11 @@
       "name": "titan-nova-mme-migration",
       "source": "./skills/titan-nova-mme-migration",
       "description": "Migrate Amazon Bedrock embedding code from Titan Text V2 / Titan Multimodal G1 to Amazon Nova Multimodal Embeddings."
+    },
+    {
+      "name": "gemini-to-nova-migration",
+      "source": "./skills/gemini-to-nova-migration",
+      "description": "Migrate Google Gemini 2.0/2.5/3.x Python code and prompts to Amazon Nova 2 Lite (boto3 Bedrock Runtime)."
     }
   ]
 }
