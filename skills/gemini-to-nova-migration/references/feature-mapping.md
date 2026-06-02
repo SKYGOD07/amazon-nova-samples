@@ -27,7 +27,7 @@ Nova 2 Lite requires a region-prefixed model ID. Ask the user which region to us
 |--------------|---------------------|
 | `gemini-3.5-flash` | `us.amazon.nova-2-lite-v1:0` |
 | `gemini-2.5-flash` | `us.amazon.nova-2-lite-v1:0` |
-| `gemini-2.5-pro` / `gemini-3.1-pro-preview` | Consider `us.amazon.nova-2-pro-v1:0` or `us.amazon.nova-2-premier-v1:0` |
+| `gemini-2.5-pro` / `gemini-3.1-pro-preview` | `us.amazon.nova-2-lite-v1:0` — **ask user to confirm they have evaluated Nova 2 Lite for their use case before proceeding** |
 | `gemini-2.0-flash` | `us.amazon.nova-2-lite-v1:0` |
 | `gemini-2.0-flash-lite` | `us.amazon.nova-2-lite-v1:0` |
 

@@ -12,7 +12,7 @@ The skill supports **Gemini 2.0 / 2.5 / 3.x** as source models, across three API
 | Current SDK (`generateContent`) | `from google import genai` — `client.models.generate_content` |
 | Current SDK (Interactions API) | `from google import genai` — `client.interactions.create` |
 
-**Target:** `us.amazon.nova-2-lite-v1:0` (Nova Pro / Premier suggested for `gemini-2.5-pro` and `gemini-3.1-pro-preview` source code)
+**Target:** `us.amazon.nova-2-lite-v1:0`
 
 ## Skill structure
 
@@ -78,7 +78,7 @@ Add the marketplace, then install the plugin:
 
 ```
 /plugin marketplace add https://github.com/aws-samples/amazon-nova-samples
-/plugin install gemini-to-nova-migration@aws-samples-amazon-nova-samples
+/plugin install gemini-to-nova-migration@amazon-nova-samples
 ```
 
 After install, invoke the skill on your Gemini code with `/gemini-to-nova`.

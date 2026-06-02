@@ -64,6 +64,8 @@ Then identify which features are used:
 
 You **MUST** flag any features in the "cannot migrate" list above and inform the user of alternatives before proceeding.
 
+If the source model is a Gemini "pro" variant (`gemini-2.5-pro`, `gemini-3.1-pro-preview`), you **MUST** ask the user whether they have evaluated Nova 2 Lite for their use case. Pro-tier Gemini models have higher capability ceilings — the user should confirm Nova 2 Lite meets their quality requirements before investing in the migration.
+
 ### Step 2: Classify the Use Case
 
 **Thinking/reasoning support by Gemini model:**
