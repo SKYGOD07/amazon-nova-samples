@@ -78,7 +78,7 @@ Add the marketplace, then install the plugin:
 
 ```
 /plugin marketplace add https://github.com/aws-samples/amazon-nova-samples
-/plugin install gemini-to-nova-migration@amazon-nova-samples
+/plugin install gemini-to-nova-migration@aws-samples-amazon-nova-samples
 ```
 
 After install, invoke the skill on your Gemini code with `/gemini-to-nova`.
